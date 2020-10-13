@@ -33,7 +33,7 @@ def even_time_steps(x, y, t, length = 101):
 	nt = np.arange(min(t), max(t), (float(max(t)-min(t))/length))
 	nx = interp(nt, t, x)[:101] # Sometimes it ends up 102 steps long.
 	ny = interp(nt, t, y)[:101]
-	return pd.TimeSeries(nx, range(len(nx))), pd.TimeSeries(ny, range(len(ny)))
+	return pd.Series(nx, range(len(nx))), pd.Series(ny, range(len(ny)))
 
 def normalize_space(array, start=0, end=1, preserve_direction=False):
 	"""Interpolates array of 1-d coordinates to given start and end value.
@@ -151,7 +151,7 @@ def uniform_time(coordinates, timepoints, desired_interval=20, max_duration=3000
 	extended_timepoints = np.arange(0, max_duration+.1, desired_interval)
 	#print len(extended_coordinates), len(extended_timepoints)
 	# Return as a time series
-	return pd.TimeSeries(extended_coordinates, extended_timepoints)
+	return pd.Series(extended_coordinates, extended_timepoints)
 
 def list_from_string(string_list):
 	"""Parses string represation of list '[1,2,3]' to an actual pythonic list [1,2,3]
@@ -924,7 +924,7 @@ def smooth_timeseries(series, window_len=11, window='hanning'):
 	# Return to original length via interpolation
 	interpolated = np.interp(np.linspace(0, len(smoothed), len(original_index)),\
 		range(len(smoothed)), smoothed)
-	return pd.TimeSeries(interpolated, original_index)
+	return pd.Series(interpolated, original_index)
 
 	
 def jitter(array, scale=.1):
