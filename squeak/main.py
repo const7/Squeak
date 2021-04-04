@@ -11,7 +11,7 @@ import warnings
 ###########################
 # Normalization functions #
 ###########################
-def even_time_steps(x, y, t, length = 101):
+def even_time_steps(x, y, t, length=101):
 	"""Interpolates x/y coordinates and t to 101 even time steps, returns x and y TimeSeries
 	
 	Parameters
@@ -31,8 +31,8 @@ def even_time_steps(x, y, t, length = 101):
 		y coordinates intepolated to 101 even time steps
 	"""
 	nt = np.arange(min(t), max(t), (float(max(t)-min(t))/length))
-	nx = interp(nt, t, x)[:101] # Sometimes it ends up 102 steps long.
-	ny = interp(nt, t, y)[:101]
+	nx = interp(nt, t, x)[:length] # Sometimes it ends up 102 steps long.
+	ny = interp(nt, t, y)[:length]
 	return pd.Series(nx, range(len(nx))), pd.Series(ny, range(len(ny)))
 
 def normalize_space(array, start=0, end=1, preserve_direction=False):
