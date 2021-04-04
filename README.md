@@ -1,7 +1,7 @@
 Squeak
 ======
 
->Python library for processing and analysing data from mouse tracking psychological experiments.
+> Python library for processing and analysing data from mouse tracking psychological experiments.
 
 Squeak is a collection of functions which I've developed to analyse psychological mouse-tracking data in python.
 It's very much a work in progress, and at the time of writing consists of two branches:
@@ -13,10 +13,8 @@ As the code is still undergoing major changes as I collect and analyse more data
 
 ## Installation
 
-Squeak is available from [PyPI](https://pypi.python.org/pypi/Squeak/0.2.0):
-
-    pip install squeak
-
 To instal the latest version (usually not necessary, development of this library is slow):
 
-    pip install git+git@github.com:EoinTravers/Squeak.git
+```sh
+pip install git+git@github.com:const7/Squeak.git
+```
