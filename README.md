@@ -16,5 +16,5 @@ As the code is still undergoing major changes as I collect and analyse more data
 To instal the latest version (usually not necessary, development of this library is slow):
 
 ```sh
-pip install git+git@github.com:const7/Squeak.git
+pip install git+https://github.com/const7/Squeak.git
 ```
